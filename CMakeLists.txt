@@ -9,6 +9,7 @@ project(mini_golf)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  gazebo_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -104,7 +105,9 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES mini_golf
 #  CATKIN_DEPENDS rospy
-#  DEPENDS system_lib
+DEPENDS 
+	rospy
+	gazebo_ros
 )
 
 ###########
