@@ -74,8 +74,8 @@ class GamePlanner(object):
         print(ball_pose.sawyer_frame)
         print("hole pose is:")
         print(hole_pose)
-        hole_pose.sawyer_frame.position.x = 0.9536
-        hole_pose.sawyer_frame.position.y = 0.5726
+        hole_pose.sawyer_frame.position.x = 0.6921
+        hole_pose.sawyer_frame.position.y = 0.5431
 
         self.move_behind_ball(hole_pose.sawyer_frame, ball_pose.sawyer_frame, False)
 
@@ -87,7 +87,7 @@ class GamePlanner(object):
         self.move(ball_pose, hole_pose)
         print("setting up to hit wait for it....")
         rospy.sleep(5) #dumb sleep for 10 seconds while we get behind ball
-        self.hit_ball()
+        #self.hit_ball()
 
         while not rospy.is_shutdown():
             #get ball position in overhead camera frame coordinate

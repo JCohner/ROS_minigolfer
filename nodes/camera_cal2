@@ -12,21 +12,30 @@ from mini_golf.srv import GetPhysical, GetPhysicalResponse, CV_POIs, CV_POIsResp
 class CameraCallib(object):
 	def __init__(self):
 		#where we see the pixel coords of the ball from cv detect
-		self.callibration_pixel_pts = np.array([[516,362],
-												[286,365],
-												[51,374],
-												[46,146],
-												[277,141],
-												[514,139],
-												[281,251]])
+		self.callibration_pixel_pts = np.array([[546,440],
+												[307,442],
+												[79,448],
+												[77,219],
+												[305,213],
+												[542,213],
+												[309,326],
+												[543,322], #elvator middle
+												[427,320],
+												[188,329],
+												[76,322]])
 		#physical mapping from sawyer frame
-		self.physical_pts = np.array([[0.438,-0.465],
-									  [0.438,.1447],
-									  [0.438,.7064],
-									  [1.0477,.7064], 
-									  [1.0477,.1477],
-									  [1.0477,-0.465],
-									  [.7428,.1447]])
+		self.physical_pts = np.array([[0.23475,-0.5179],
+									  [0.23475,0.0918],
+									  [0.23475,.6955],
+									  [.8445,.6955], 
+									  [.8445,0.0918],
+									  [.8445,-0.5179],
+									  [0.5396,0.0918], #middle
+									  [.513,-.5185],
+									  [.536,-.2353],
+									  [.569,.3832],
+									  [.5661,0.6712]])
+
 		self.num_pts = len(self.callibration_pixel_pts)
 
 		rospy.Service('get_physical', GetPhysical, self.get_physical)
